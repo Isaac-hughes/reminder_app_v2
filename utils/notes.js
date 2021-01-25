@@ -32,9 +32,13 @@ const saveNotes = allNotes => {
 const removeNote = noteToDelete => {
     const allNotes = loadNotes()
 
-    const notesToKeep = allNotes.filter(note => {
-        return note.reminder != noteToDelete
-    })
+    try {
+        const removedItem = allNotes.splice(noteToDelete - 1, 1)
+        console.log(`Successfully removed ${removedItem[0].reminder}`);
+    } catch (error){
+        console.log("Number out of range");
+    }
+    saveNotes(allNotes);
 }
 
 module.exports = {
