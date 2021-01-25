@@ -1,1 +1,1 @@
-# reminder_app_v2
+# A better Reminder app
